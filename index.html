@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just for You</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ff69b4;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .question-box {
+      background: #ffe4e1;
+      border-radius: 15px;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin: 10px 0;
+      display: none;
+    }
+    .question {
+      font-size: 1.2em;
+      color: #c71585;
+      margin-bottom: 10px;
+    }
+    select {
+      font-size: 1em;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 1.1em;
+      color: #ff1493;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello meri pyari si Mika ji, answer dijiye in questions ka (no bc)</h1>
+
+  <div class="question-box" id="q1">
+    <div class="question">1. Do you love me?</div>
+    <select onchange="showNext('q1', 'q2')">
+      <option selected disabled>Choose</option>
+      <option>Yes</option>
+      <option>YESS</option>
+    </select>
+  </div>
+
+  <div class="question-box" id="q2">
+    <div class="question">2. Do you think we will stay together forever?</div>
+    <select onchange="showNext('q2', 'q3')">
+      <option selected disabled>Choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div class="question-box" id="q3">
+    <div class="question">3. Will you go on a date with me?</div>
+    <select onchange="showNext('q3', 'q4')">
+      <option selected disabled>Choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div class="question-box" id="q4">
+    <div class="question">4.kya ap mere bacho ki maa banengi?</div>
+    <select onchange="showFinalMessage()">
+      <option selected disabled>Choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div class="footer" id="finalMessage">
+    Thank you for answering, i love you so much mika 😚♥️.
+  </div>
+
+  <script>
+    document.getElementById('q1').style.display = 'block';
+
+    function showNext(currentId, nextId) {
+      document.getElementById(currentId).style.display = 'none';
+      document.getElementById(nextId).style.display = 'block';
+    }
+
+    function showFinalMessage() {
+      document.getElementById('q4').style.display = 'none';
+      document.getElementById('finalMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
