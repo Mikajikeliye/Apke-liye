@@ -41,15 +41,36 @@
     }
     .footer {
       margin-top: 40px;
-      font-size: 1.1em;
+      font-size: 1.3em;
       color: #ff1493;
-      display: none;
       text-align: center;
+      display: none;
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .heart {
+      font-size: 2.5em;
+      color: red;
+      animation: heartbeat 1s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
   </style>
 </head>
 <body>
   <h1>Hello meri pyari si Mika ji, answer dijiye in questions ka (no bc)</h1>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
   <div class="question-box" id="q1">
     <div class="question">1. Do you love me?</div>
@@ -79,7 +100,7 @@
   </div>
 
   <div class="question-box" id="q4">
-    <div class="question">4.kya ap mere bacho ki maa banengi?</div>
+    <div class="question">4. Kya ap mere bacho ki maa banengi?</div>
     <select onchange="showFinalMessage()">
       <option selected disabled>Choose</option>
       <option>Yes</option>
@@ -88,7 +109,8 @@
   </div>
 
   <div class="footer" id="finalMessage">
-    Thank you for answering, i love you so much mika 😚♥️.
+    Thank you for answering,<br>I love you so much Mika!  
+    <div class="heart">♥</div>
   </div>
 
   <script>
